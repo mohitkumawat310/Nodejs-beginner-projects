@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register : Notes</title>
+    <!-- ---CSS--Links -->
+    <link rel="shortcut icon" href="/images/Ifone.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <!-- --JS--Links-- -->
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <!-- --Login form-- -->
+    <div class="login_form_sec section">
+        <h1 class="sec_title">We are <span style="color: #FD7012;">excited</span> to welcome you in<br>
+            our FAMILY 👋</h1>
+        <div class="login_form_area">
+            <form action="/sign_up" method="post">
+                <div class="form_area">
+                    <% if (message) { %>
+                    <div class="single_input">
+                        <label for="full_name" class="input_label" style="color: red;">
+                            <%= message %>
+                        </label>
+                    </div>
+                    <% } %>
+                    <div class="dual_input">
+                        <div class="single_input">
+                            <label for="name" class="input_label">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Ravi kumar" class="input_field">
+                        </div>
+                        <div class="single_input">
+                            <label for="username" class="input_label">Username</label>
+                            <input type="text" name="username" id="username" placeholder="mohitkumawat310"
+                                class="input_field">
+                        </div>
+                    </div>
+                    <div class="dual_input">
+                        <div class="single_input">
+                            <label for="password" class="input_label">Password</label>
+                            <input type="password" name="password" id="password" placeholder="xxxxxxx"
+                                class="input_field">
+                        </div>
+                        <div class="single_input">
+                            <label for="confirm_password" class="input_label">Confirm password</label>
+                            <input type="password" name="confirm_password" id="confirm_password" placeholder="xxxxxxx"
+                                class="input_field">
+                        </div>
+                    </div>
+                    <div class="single_input">
+                        <button type="submit" class="primary_btn">Register now</button>
+                        <p class="sec_desc" style="margin-top: 0;"><a href="/">Already have an account ? Click here</a>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- --Login form END-- -->
+    <!-- ---Scripts-- -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

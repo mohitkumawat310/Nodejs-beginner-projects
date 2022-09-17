@@ -1,0 +1,283 @@
+/* ---------------------------------------------
+Version : 0.1,
+Author : Mohit Kumawat
+---------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: var(--pop-reg);
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+body {
+    background: var(--background_color);
+    /* --Raleway font number fixing-- */
+    -webkit-font-feature-settings: "lnum";
+    -moz-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------
+Variable ------>>>>>
+---------------------------------------------- */
+:root {
+    /* ------colors---- */
+    --primary_color: #0066cc;
+    --background_color: #ffffff;
+    --white: #f5f5f7;
+    --light_black: #424245;
+    --black: #1d1d1f;
+    /* ------fonts---- */
+    --rale-light: rale-light;
+    --rale-reg: rale-reg;
+    --rale-med: rale-med;
+    --rale-sem: rale-sem;
+    --rale-bold: rale-bold;
+    /* ------font size----[0.5 rem = 5px, 1 rem = 10px] */
+    font-size: 62.5%;
+    /*-- TO MAKE 1 rem  = 10px */
+    --h1_font_size: 3.5rem;
+    --dnavbar_font_size: 1.5rem;
+    --dnavbar_dropdown_title_font_size: 1.8rem;
+    --p_font_size: 1.6rem;
+    /* ------Margin---- */
+    --mpx150: 15rem;
+    --mpx50: 5rem;
+    --mpx20: 2rem;
+    --mpx15: 1.5rem;
+    /* ------Padding---- */
+    --ppx70: 7rem;
+    --ppx50: 5rem;
+    --ppx40: 4rem;
+    --ppx35: 3.5rem;
+    --ppx30: 3rem;
+    --ppx25: 2.5rem;
+    --ppx20: 2rem;
+    --ppx16: 1.6rem;
+    --ppx10: 1rem;
+    --ppx8: 0.8rem;
+}
+
+/* ---------------------------------------------
+Components ------>>>>>
+---------------------------------------------- */
+/* --------------------
+Base Components
+-------------------- */
+.section {
+    max-width: 1160px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+/* --To avoid fixed overlap of navbar-- */
+.height_adjuster {
+    height: 48px;
+}
+
+/* -----------
+Buttons
+----------- */
+/* ---Primary btn */
+.primary_btn {
+    font-family: var(--rale-sem);
+    font-size: var(--p_font_size);
+    padding: var(--ppx8) var(--ppx16);
+    cursor: pointer;
+    color: var(--white);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background: var(--primary_color);
+}
+
+/* ---Secondary link btn */
+.secondary_link {
+    font-family: var(--rale-sem);
+    font-size: var(--p_font_size);
+    color: var(--primary_color);
+}
+
+/* -----------
+Inputs
+----------- */
+.form_area {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: var(--mpx20);
+}
+
+.single_input {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.dual_input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.triple_input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.four_input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.input_label {
+    font-family: var(--rale-med);
+    font-size: var(--p_font_size);
+    color: var(--black);
+}
+
+.input_field {
+    background: var(--white);
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: var(--ppx10);
+    font-family: var(--rale-reg);
+    font-size: var(--p_font_size);
+    color: var(--light_black);
+}
+
+.text_area_field {
+    background: var(--white);
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: var(--ppx10);
+    font-family: var(--rale-reg);
+    font-size: var(--p_font_size);
+    color: var(--light_black);
+    resize: none;
+}
+
+.text_area_field:focus,
+.input_field:focus {
+    border: 1px solid var(--light_black);
+    padding: 9px;
+}
+
+.text_area_field::placeholder,
+.input_field::placeholder {
+    color: #cecbcb;
+}
+
+.checkbox_single_input {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.checkbox_input_label {
+    margin-left: 10px;
+    font-family: var(--pop-med);
+    color: var(--light_black);
+    font-size: 15px;
+}
+
+/* --------------------
+Sections
+-------------------- */
+/* ---Fonts Size-- */
+.sec_sub_title {
+    font-family: var(--rale-sem);
+    font-size: var(--p_font_size);
+    color: var(--light_black);
+}
+
+.sec_title {
+    margin-top: var(--mpx15);
+    font-family: var(--rale-bold);
+    font-size: var(--h1_font_size);
+    color: var(--light_black);
+}
+
+.sec_desc {
+    font-family: var(--rale-reg);
+    font-size: var(--p_font_size);
+    color: var(--light_black);
+    margin-top: var(--mpx20);
+}
+
+.sec_link {
+    margin-top: var(--mpx20);
+}
+
+.sec_boost_p {
+    font-family: var(--rale-sem);
+    font-size: 20px;
+    margin-top: var(--mpx20);
+    color: var(--light_black);
+}
+
+/* --------- Left right section ---------- */
+.left_right_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_area {
+    max-width: 40%;
+}
+
+/* ------------------------------------------------------------------------
+Homepage ->>>>>>>>>>>>>>>>
+------------------------------------------------------------------------ */
+.login_form_sec {
+    margin-top: 20vh;
+}
+
+.login_form_area {
+    margin-top: var(--mpx50);
+}
+/* ------------------------------------------------------------------------
+Notes ->>>>>>>>>>>>>>>>
+------------------------------------------------------------------------ */
+.notes_sec{
+    margin-top: 5vh;
+}
+.notes_box_area{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--mpx20);
+    column-gap: var(--mpx20);
+    margin-top: var(--mpx50);
+}
+.notes_box{
+    background: var(--white);
+    padding: var(--ppx20) var(--ppx25);
+    border-radius: 5px;
+}

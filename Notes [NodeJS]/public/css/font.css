@@ -1,0 +1,25 @@
+/* ---Poppins-------------------- */
+@font-face {
+    src: url(../fonts/Raleway-Light.ttf);
+    font-family: rale-light;
+}
+
+@font-face {
+    src: url(../fonts/Raleway-Regular.ttf);
+    font-family: rale-reg;
+}
+
+@font-face {
+    src: url(../fonts/Raleway-Medium.ttf);
+    font-family: rale-med;
+}
+
+@font-face {
+    src: url(../fonts/Raleway-SemiBold.ttf);
+    font-family: rale-sem;
+}
+
+@font-face {
+    src: url(../fonts/Raleway-Bold.ttf);
+    font-family: rale-bold;
+}

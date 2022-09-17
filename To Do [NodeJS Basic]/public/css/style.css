@@ -1,0 +1,213 @@
+/* ------------------------------------------------------------------------
+Globle CSS, ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+version : 0.1, ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: var(--pop-reg);
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+body {
+    background: var(--background_color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------
+Variables ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------------------------------ */
+/* ---------
+Base Components---------------------------------------------------------
+---------- */
+.section {
+    max-width: 500px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+/* ---------
+Variables---------------------------------------------------------
+---------- */
+:root {
+    /* ------colors---- */
+    --primary_color: #0027B3;
+    --background_color: #8ea5f7;
+    --white: #ffffff;
+    --light_black: #8C8C8C;
+    --black: #171717;
+    /* ------fonts---- */
+    --pop-light: pop-light;
+    --pop-reg: pop-reg;
+    --pop-med: pop-med;
+    --pop-sem: pop-sem;
+    --pop-bold: pop-bold;
+    /* ------font size----[0.5 rem = 5px, 1 rem = 10px] */
+    font-size: 62.5%;
+    /*-- TO MAKE 1 rem  = 10px */
+    --h1_font_size: 6.5rem;
+    --h2_font_size: 3.5rem;
+    --h3_font_size: 2.0rem;
+    --p_font_size: 1.6rem;
+    /* ------Margin---- */
+    --mpx150: 15rem;
+    --mpx100: 10rem;
+    --mmpx150: -15rem;
+    --mpx65: 6.5rem;
+    --mpx50: 5.0rem;
+    --mpx30: 3.0rem;
+    --mpx20: 2.0rem;
+    --mpx15: 1.5rem;
+    --mpx10: 1.0rem;
+    --mpx5: 0.5rem;
+    /* ------Padding---- */
+    --ppx70: 7.0rem;
+    --ppx50: 5.0rem;
+    --ppx40: 4.0rem;
+    --ppx35: 3.5rem;
+    --ppx30: 3.0rem;
+    --ppx25: 2.5rem;
+    --ppx20: 2.0rem;
+    --ppx16: 1.6rem;
+    --ppx10: 1.0rem;
+    --ppx8: 0.8rem;
+}
+
+/* -----------
+Buttons
+----------- */
+/* ---Primary btn */
+.primary_btn {
+    font-family: var(--rale-sem);
+    font-size: var(--p_font_size);
+    padding: var(--ppx8) var(--ppx16);
+    cursor: pointer;
+    color: var(--white);
+    border: none;
+    /* border-radius: 3px; */
+    outline: none;
+    background: var(--primary_color);
+}
+
+/* ---Secondary link btn */
+.secondary_link {
+    font-family: var(--rale-sem);
+    font-size: var(--p_font_size);
+    color: var(--primary_color);
+}
+
+/* -----------
+Inputs
+----------- */
+.form_area {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: var(--mpx20);
+}
+
+.single_input {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.input_label {
+    font-family: var(--rale-med);
+    font-size: var(--p_font_size);
+    color: var(--black);
+}
+
+.input_field {
+    background: var(--white);
+    outline: none;
+    border: none;
+    /* border-radius: 2px; */
+    padding: var(--ppx8) var(--ppx16);
+    font-family: var(--rale-reg);
+    font-size: var(--p_font_size);
+    color: var(--light_black);
+    width: 100%;
+}
+
+.input_field::placeholder {
+    color: #cecbcb;
+}
+
+/* ------------------------------------------------------------------------
+Homepage ->>>>>>>>>
+------------------------------------------------------------------------ */
+.main_sec {
+    margin-top: 10vh;
+}
+
+.title {
+    font-family: var(--pop-med);
+    font-size: var(--h3_font_size);
+    color: var(--black);
+    margin-bottom: var(--mpx15);
+}
+
+.flex_input {
+    display: flex;
+    align-items: center;
+}
+.task_area{
+    margin-top: var(--mpx50);
+}
+.task_box_area{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: var(--mpx15);
+}
+.task_box{
+    background: var(--white);
+    padding: var(--ppx8) var(--ppx16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+.task_title{
+    font-family: var(--pop-reg);
+    font-size: var(--p_font_size);
+    color: var(--light_black);
+}
+.task_title_delete{
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: var(--white);
+    background: red;
+    cursor: pointer;
+}
+.task_status{
+    cursor: pointer;
+}
+.task_completed{
+    text-decoration: line-through;
+}
+.task_title_delete:hover{
+    color: red;
+    background: var(--black);
+}
+.title2 {
+    font-family: var(--pop-med);
+    font-size: var(--h3_font_size);
+    color: var(--black);
+    margin-bottom: var(--mpx15);
+}

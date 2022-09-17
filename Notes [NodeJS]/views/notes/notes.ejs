@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <!-- --CSS-- -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <!-- --javascript-- -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <div class="notes_sec section">
+        <div class="heading" style="display: flex; justify-content:space-between; align-items:center;">
+            <h1 class="sec_title"><span style="color: #d92b85;">Notes</span><br></h1>
+            <p class="sec_desc" style="margin-top: 0;"><a href="/notes/create_note">Create note</a></p>
+            <p class="sec_desc" style="margin-top: 0;"><a href="/logout">Log out</a></p>
+        </div>
+        <% if (message) { %>
+            <div class="single_input" style="margin-top: 15px;">
+                <label for="full_name" class="input_label" style="color: red;">
+                    <%= message %>
+                </label>
+            </div>
+        <% } %>
+        <div class="notes_box_area">
+            <% notes.forEach(data => { %>
+                <div class="notes_box">
+                    <p class="sec_desc notes_box_p" style="margin-top: 0;"><%= data.text %></p>
+                    <div class="note-action" style="display: flex;">
+                        <p class="sec_desc"><a href="notes/edit/<%= data._id %> ">Edit ></a></p>
+                        <p class="sec_desc" style="margin-left: 15px ;"><a style="color: red" href="notes/delete/<%= data._id %> ">Delete ></a></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>

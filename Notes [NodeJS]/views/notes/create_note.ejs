@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create note</title>
+    <!-- ---CSS--Links -->
+    <link rel="shortcut icon" href="/images/Ifone.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <!-- --JS--Links-- -->
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <!-- --Login form-- -->
+    <div class="login_form_sec section">
+        <h1 class="sec_title"><span style="color: #fd1280;">Create note</span></h1>
+        <% if (message) { %>
+            <div class="single_input" style="margin-top: 15px;">
+                <label for="full_name" class="input_label" style="color: red;">
+                    <%= message %>
+                </label>
+            </div>
+        <% } %>
+        <div class="login_form_area">
+            <form action="/notes/create_note" method="post">
+                <div class="form_area">
+                    <div class="single_input">
+                        <label for="text" class="input_label">Write note</label>
+                        <textarea class="text_area_field" name="text" id="" cols="30" rows="10" placeholder="Write your note here.."></textarea>
+                    </div>
+                    <div class="single_input">
+                        <button type="submit" class="primary_btn">Create note</button>
+                        <p class="sec_desc" style="margin-top: 0;"><a href="/notes">Go back</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- --Login form END-- -->
+    <!-- ---Scripts-- -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

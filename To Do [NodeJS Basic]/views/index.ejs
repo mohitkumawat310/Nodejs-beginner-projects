@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do [NodeJS App]</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div class="section main_sec">
+        <form action="/" method="post">
+            <h3 class="title">Add Task</h3>
+            <div class="form_area">
+                <div class="single_input">
+                    <div class="flex_input">
+                        <input class="input_field" name="title" type="text" placeholder="Enter task">
+                        <button type="submit" class="primary_btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="task_area">
+            <h3 class="title2">Tasks</h3>
+            <div class="task_box_area">
+                <% for(i=0; i < task.length; i++){ %>
+                    <div class="task_box">
+                        <p class="task_title task_status <% if(task[i].done == true){ %> task_completed <% } %>"
+                            data-id="<%= task[i]._id %>" data-done="<%= task[i].done %>">
+                            <%= task[i].title %>
+                        </p>
+                        <p class="task_title task_title_delete" id="<%= task[i]._id %>" data-id="<%= task[i]._id %>">X
+                        </p>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Delete
+        $(".task_title_delete").click(function () {
+            var id = $(this).data("id");
+            $.ajax({
+                url: "/" + id,
+                method: "DELETE",
+                dataType: 'json',
+                success: function (response) {
+                    if (response.deletedCount == 1) {
+                        $("#" + id).parent(".task_box").remove();
+                    } else {
+                        console.log("Hey");
+                    }
+                },
+                timeout: 8000,
+            });
+        })
+
+        // Update
+        $(document).on("click", ".task_status", function (event) {
+            var id = $(this).attr("data-id");
+            var done = $(this).attr("data-done");
+            console.log(done)
+            $.ajax({
+                url: "/" + id + "/" + done,
+                method: "PATCH",
+                dataType: 'json',
+                success: function (response) {
+                    if (response.modifiedCount == 1) {
+                        if (done == "true") {
+                            $("#" + id).prev(".task_status").removeClass("task_completed");
+                            $("#" + id).prev(".task_status").attr("data-done", "false");
+                        } else {
+                            $("#" + id).prev(".task_status").addClass("task_completed");
+                            $("#" + id).prev(".task_status").attr("data-done", "true");
+                        }
+                    } else {
+                        console.log("Hey");
+                    }
+                },
+                timeout: 8000,
+            });
+        })
+    </script>
+</body>
+
+</html>
